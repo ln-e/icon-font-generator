@@ -17,7 +17,7 @@
     "colors": "^1.2.1",
     "glob": "^7.1.2",
     "minimist": "^1.2.0",
-    "webfonts-generator": "^0.4.0"
+    "webfonts-generator": "https://github.com/muratcorlu/webfonts-generator.git"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

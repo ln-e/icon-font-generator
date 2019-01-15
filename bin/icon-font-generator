@@ -33,6 +33,7 @@ function init() {
     cssTemplate        : args.csstp,
     json               : args.j || args.json,
     jsonPath           : args.jsonpath,
+    ligature           : args.ligature,
     html               : args.html,
     htmlPath           : args.htmlpath,
     htmlTemplate       : args.htmltp,
@@ -121,6 +122,7 @@ function showHelp() {
     '  --codepoints     '.bold + 'Path to explicit character code mapping JSON file (Optional)\n' +
     '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
     '  --jsonpath       '.bold + 'JSON output path (Defaults to <out>/<name>.json)\n' +
+    '  --ligatures      '.bold + 'Enable ligatures generator\n' +
     '  -p, --prefix     '.bold + 'CSS classname prefix for icons (Default: icon)\n' +
     '  -t, --tag        '.bold + 'CSS base selector for icons (Default: i)\n' +
     '  --selector       '.bold + 'Use a selector instead of \'tag + prefix\' (Default: null)\n' +
