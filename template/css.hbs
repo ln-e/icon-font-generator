@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "{{ fontName }}";
-    src: {{{ src }}};
+font-family: "{{ fontName }}";
+src: {{{ src }}};
 }
 
 {{# if baseSelector }}
-{{ baseSelector }}:before {
+  {{ baseSelector }}:before {
 {{ else }}
-{{ baseTag }}[class^="{{classPrefix}}"], {{ baseTag }}[class*=" {{classPrefix}}"] {
+  {{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
 {{/ if }}
     font-family: {{ fontName }} !important;
     font-style: normal;
@@ -16,6 +16,14 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-variant-ligatures: 'liga';
 }
 
+{{# each codepoints }}
+  {{# if ../baseSelector }}
+    {{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
+  {{ else }}
+    {{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
+  {{/ if }}
+  content: "\\{{ this }}";
+  }
+{{/ each }}
