@@ -27,6 +27,7 @@ function init() {
     fontName           : args.n || args.name,
     fontsPath          : args.f || args.fontspath,
     types              : types,
+    ts                 : args.ts,
     css                : args.c || args.css,
     cssPath            : args.csspath,
     cssFontsUrl        : args.cssfontsurl,

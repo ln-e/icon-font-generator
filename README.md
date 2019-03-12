@@ -63,6 +63,7 @@ Options:
   --mono           Make font monospace (Default: false)
   --height         Fixed font height value
   --center         Center font horizontally
+  --ts             Timestamp for generated font
 ```
 
 
