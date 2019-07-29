@@ -1,12 +1,12 @@
 @font-face {
-font-family: "{{ fontName }}";
-src: {{{ src }}};
+  font-family: "{{ fontName }}";
+  src: {{{ src }}};
 }
 
 {{# if baseSelector }}
-  {{ baseSelector }}:before {
+{{ baseSelector }}:before {
 {{ else }}
-  {{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
+{{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
 {{/ if }}
     font-family: {{ fontName }} !important;
     font-style: normal;
@@ -20,10 +20,10 @@ src: {{{ src }}};
 
 {{# each codepoints }}
   {{# if ../baseSelector }}
-    {{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
+{{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
   {{ else }}
-    {{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
+{{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
   {{/ if }}
   content: "\\{{ this }}";
-  }
+}
 {{/ each }}

@@ -1,27 +1,34 @@
 {
-  "name": "icon-font-generator",
-  "version": "2.1.10",
+  "name": "@ln-e/icon-font-generator",
+  "version": "2.2.3",
   "description": "Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Workshape/icon-font-generator.git"
+    "url": "https://github.com/ln-e/icon-font-generator.git"
   },
   "bin": {
     "icon-font-generator": "bin/icon-font-generator"
   },
-  "scripts": {},
-  "author": "Tancredi Trugenberger",
+  "scripts": {
+    "test": "./bin/icon-font-generator resources/icons/*.svg -o resources/fonts --csspath=\"resources/styles/_icons.scss\" --html=false --name=icons --json=false --height=1024 --descent=64 --round=10e8 --ts=1552345600"
+  },
+  "authors": [
+    {
+      "name": "Tancredi Trugenberger"
+    },
+    {
+      "name": "Igor Bodnar"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
-    "colors": "^1.2.1",
+    "webfonts-generator": "https://github.com/muratcorlu/webfonts-generator.git",
     "glob": "^7.1.2",
-    "minimist": "^1.2.0",
-    "webfonts-generator": "https://github.com/muratcorlu/webfonts-generator.git"
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-recommended": "^2.0.0"
+    "prettier": "^1.18.2"
   },
   "engines": {
     "node": ">=v8.1.0"
